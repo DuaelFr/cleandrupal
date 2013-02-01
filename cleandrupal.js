@@ -12,7 +12,7 @@
   status = $('#edit-sid option:selected', form).text();
   if (status.indexOf('closed') === 0 || status.indexOf('fixed') === 0) return;
 
-  lastCommentDate = $('#comments .comment:last .submitted em').text();
+  lastCommentDate = $('.submitted:last em').text();
   lastCommentDate = lastCommentDate.split(' at ')[0];
   lastCommentDate = lastCommentDate.replace(lastCommentDate.split(' ')[0], lastCommentDate.split(' ')[0].substr(0, 3));
   lastCommentDate = new Date(Date.parse(lastCommentDate));
