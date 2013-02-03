@@ -11,6 +11,7 @@
 
   status = $('#edit-sid option:selected', form).text();
   if (status.indexOf('closed') === 0 || status.indexOf('fixed') === 0) {
+    $(window).scrollTop(0);
     $('.flag-project-issue-follow a.unflag-action').trigger('click');
     return;
   }
