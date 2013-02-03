@@ -10,7 +10,10 @@
   if (version[0] > 5) return;
 
   status = $('#edit-sid option:selected', form).text();
-  if (status.indexOf('closed') === 0 || status.indexOf('fixed') === 0) return;
+  if (status.indexOf('closed') === 0 || status.indexOf('fixed') === 0) {
+    $('.flag-project-issue-follow a.unflag-action').trigger('click');
+    return;
+  }
 
   lastCommentDate = $('.submitted:last em').text();
   lastCommentDate = lastCommentDate.split(' at ')[0];
